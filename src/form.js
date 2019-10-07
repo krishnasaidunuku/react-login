@@ -16,7 +16,7 @@ export class Login extends React.Component {
       
     
       handleSubmit(e){
-        const { history } = this.props;
+        
         var email= this.refs.Email.value;
         var password= this.refs.Password.value;
         if(email!==''&&password!==""){
@@ -24,7 +24,7 @@ export class Login extends React.Component {
             if (obj.email===email && obj.password===password){
                 this.setState({ message: '' })
                 alert('authentication successful');
-                history.push('/users');
+                
             
             }
             else{
