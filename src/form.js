@@ -21,16 +21,22 @@ export class Login extends React.Component {
         var password= this.refs.Password.value;
         if(email!==''&&password!==""){
             var obj=JSON.parse(localStorage.getItem(email));
-            if (obj.email===email && obj.password===password){
-                this.setState({ message: '' })
-                alert('authentication successful');
-                
-            
-            }
-            else{
-                e.preventDefault();
-                this.setState({ message: 'wrong credentials' });
-            }
+            if (obj){
+              if (obj.email===email && obj.password===password){
+                  this.setState({ message: '' })
+                  alert('authentication successful');
+                  
+              
+              }
+              else{
+                  e.preventDefault();
+                  this.setState({ message: 'wrong credentials' });
+              }
+          }
+          else{
+            e.preventDefault();
+            this.setState({message:"account is not found"})
+          }
         }
         else{
             
