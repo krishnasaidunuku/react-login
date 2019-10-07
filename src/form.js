@@ -28,6 +28,7 @@ export class Login extends React.Component {
             
             }
             else{
+                e.preventDefault();
                 this.setState({ message: 'wrong credentials' });
             }
         }
